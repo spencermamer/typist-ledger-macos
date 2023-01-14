@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70113CD7297357C100360D01 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70113CD6297357C100360D01 /* SettingsView.swift */; };
 		704E5F99297335E0003245F9 /* Typist_LedgerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704E5F98297335E0003245F9 /* Typist_LedgerApp.swift */; };
 		704E5F9B297335E0003245F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704E5F9A297335E0003245F9 /* ContentView.swift */; };
 		704E5F9D297335E1003245F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 704E5F9C297335E1003245F9 /* Assets.xcassets */; };
@@ -14,6 +15,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70113CD6297357C100360D01 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		70113CD82973581700360D01 /* Typist-Ledger-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Typist-Ledger-Info.plist"; sourceTree = SOURCE_ROOT; };
 		704E5F95297335E0003245F9 /* Typist Ledger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Typist Ledger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		704E5F98297335E0003245F9 /* Typist_LedgerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typist_LedgerApp.swift; sourceTree = "<group>"; };
 		704E5F9A297335E0003245F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,11 +55,13 @@
 		704E5F97297335E0003245F9 /* Typist Ledger */ = {
 			isa = PBXGroup;
 			children = (
+				70113CD82973581700360D01 /* Typist-Ledger-Info.plist */,
 				704E5F98297335E0003245F9 /* Typist_LedgerApp.swift */,
 				704E5F9A297335E0003245F9 /* ContentView.swift */,
 				704E5F9C297335E1003245F9 /* Assets.xcassets */,
 				704E5FA1297335E1003245F9 /* Typist_Ledger.entitlements */,
 				704E5F9E297335E1003245F9 /* Preview Content */,
+				70113CD6297357C100360D01 /* SettingsView.swift */,
 			);
 			path = "Typist Ledger";
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70113CD7297357C100360D01 /* SettingsView.swift in Sources */,
 				704E5F9B297335E0003245F9 /* ContentView.swift in Sources */,
 				704E5F99297335E0003245F9 /* Typist_LedgerApp.swift in Sources */,
 			);
@@ -197,7 +203,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -251,7 +257,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -266,6 +272,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Typist Ledger/Typist_Ledger.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -274,11 +281,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Typist-Ledger-Info.plist";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.spencermamer.Typist-Ledger";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -293,6 +303,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Typist Ledger/Typist_Ledger.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -301,11 +312,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Typist-Ledger-Info.plist";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.spencermamer.Typist-Ledger";
 				PRODUCT_NAME = "$(TARGET_NAME)";

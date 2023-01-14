@@ -9,9 +9,24 @@ import SwiftUI
 
 @main
 struct Typist_LedgerApp: App {
+    @State var currentNumber: String = "1"
+    
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+
+        MenuBarExtra("Typist Ledger", systemImage: "keyboard.badge.ellipsis") {
+            Button("One") {
+                currentNumber = "1"
+            }
+            Button("Two") {
+                currentNumber = "2"
+            }
+            Button("Three") {
+                currentNumber = "3"
+            }
+            Divider()
+            Button("Quit") {
+                NSApplication.shared.terminate(nil)
+            }
         }
     }
 }
