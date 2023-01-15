@@ -18,11 +18,11 @@ class KeyMonitoringService {
         self.fileService = service
         print("Starting")
         
-        // Setup first interval
-        self.lastTickTime = Date().timeIntervalSince1970
+        // Setup first 
+        self.lastTickTime = floor(Date().timeIntervalSince1970)
         
         NSEvent.addGlobalMonitorForEvents(matching: .keyDown) { event in
-            let nextTick = Date().timeIntervalSince1970
+            let nextTick = floor(Date().timeIntervalSince1970)
         
             // Keep talying typing until 60 seconds of silence
             if floor(nextTick - self.lastTickTime) > 60 {
