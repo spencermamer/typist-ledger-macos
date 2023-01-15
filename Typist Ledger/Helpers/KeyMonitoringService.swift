@@ -14,33 +14,39 @@ class KeyMonitoringService {
     var lastTickTime : Double = 0
     var fileService : FileService?
     
+    private var canRun : Bool = true
+    
     func start(service: FileService)  {
+        
         self.fileService = service
         print("Starting")
         
-        // Setup first
+        // Setup first tick
         self.lastTickTime = floor(Date().timeIntervalSince1970)
         
-        NSEvent.addGlobalMonitorForEvents(matching: .keyDown) { event in
-            let nextTick = floor(Date().timeIntervalSince1970)
-        
-            // Keep talying typing until 60 seconds of silence
-            if floor(nextTick - self.lastTickTime) > 60 {
+        if canRun {
+            NSEvent.addGlobalMonitorForEvents(matching: .keyDown) { event in
+                let nextTick = floor(Date().timeIntervalSince1970)
                 
-                // Interval reset. Last benchmark tick time set to now
-                self.lastTickTime = nextTick
-                
-                print("\(self.lastTickTime) - \(self.tickStrokes)")
-                
-                print("Logged? \(self.logToFile(tick: self.lastTickTime, count: self.tickStrokes))")
-                // Reset Keystrokes
-                self.tickStrokes = 0;
+                // Keep talying typing until 60 seconds of silence
+                if floor(nextTick - self.lastTickTime) > 60 {
+                    
+                    // Interval reset. Last benchmark tick time set to now
+                    self.lastTickTime = nextTick
+                    
+                    print("\(self.lastTickTime) - \(self.tickStrokes)")
+                    print("Logged? \(self.logToFile(tick: self.lastTickTime, count: self.tickStrokes))")
+                    
+                    // Reset Keystrokes
+                    self.tickStrokes = 0;
+                }
+                // If logging interval not exceed, increase tick count
+                self.tickStrokes += 1
+                print(self.tickStrokes)
             }
-            // If logging interval not exceed, increase tick count
-            self.tickStrokes += 1
-            print(self.tickStrokes)
         }
     }
+    
     
     private func logToFile(tick: Double, count: Int) -> Bool {
         // Ask file service to log entry

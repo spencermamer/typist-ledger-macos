@@ -7,21 +7,21 @@
 
 import SwiftUI
 import AppKit.NSAccessibility
-import Combine
+//import Combine
 
 @main
 struct Typist_LedgerApp: App {
-    
 #if os(macOS)
     @Environment(\.openWindow) private var openWindow
 #endif
     
     // MARK: Properties
     @AppStorage("logFilePath") var logFilePath: String = ""
-    private var permissionsService = PermissionsService()
+    
     // Init Services
-    let keymonitoringservice = KeyMonitoringService()
-    let fileService = FileService()
+    private var permissionsService = PermissionsService()
+    private let keymonitoringService = KeyMonitoringService()
+    private let fileService = FileService()
     
     
     init() {
@@ -44,7 +44,7 @@ struct Typist_LedgerApp: App {
     var body: some Scene {
         
         Settings {
-            SettingsView()
+            PermissionsView()
         }
         
         MenuBarExtra("Typist Ledger", systemImage: "keyboard.badge.ellipsis") {
@@ -61,7 +61,7 @@ struct Typist_LedgerApp: App {
     // MARK: Functions
     
     private func startLogging() {
-        DispatchQueue.main.async { self.keymonitoringservice.start(service: self.fileService) }
+        DispatchQueue.main.async { self.keymonitoringService.start(service: self.fileService) }
     }
     
     private func selectLogFolderIfNotDefined() -> String {
