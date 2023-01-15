@@ -43,12 +43,11 @@ class KeyMonitoringService {
     }
     
     private func logToFile(tick: Double, count: Int) -> Bool {
+        // Ask file service to log entry
         if let fileService {
             return fileService.addEntry(tick: tick, keystrokesCount: count)
         }
         return false
     }
-    
-    
 }
 
