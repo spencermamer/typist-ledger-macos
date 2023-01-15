@@ -38,6 +38,9 @@ struct Typist_LedgerApp: App {
     
     // MARK: UI
     var body: some Scene {
+        Settings {
+            SettingsView()
+        }
         MenuBarExtra("Typist Ledger", systemImage: "keyboard.badge.ellipsis") {
             Button("Settings") {
                 NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
