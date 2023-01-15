@@ -11,16 +11,18 @@ import Combine
 
 @main
 struct Typist_LedgerApp: App {
-    // MARK: Properties
-    @AppStorage("logFilePath") var logFilePath: String = ""
-    
-    // Init Services
-    let keymonitoringservice = KeyMonitoringService()
-    let fileService = FileService()
     
 #if os(macOS)
     @Environment(\.openWindow) private var openWindow
 #endif
+    
+    // MARK: Properties
+    @AppStorage("logFilePath") var logFilePath: String = ""
+    private var permissionsService = PermissionsService()
+    // Init Services
+    let keymonitoringservice = KeyMonitoringService()
+    let fileService = FileService()
+    
     
     init() {
         // 1. Check if log file path is set. If not, prompt user to select folder
@@ -32,15 +34,19 @@ struct Typist_LedgerApp: App {
             print("Could not load file")
         }
         
+        // Check whether accessibility permissions are enabled
+        self.permissionsService.pollAccessibilityPrivileges()
         // 3. Start keystroke counting service
         startLogging()
     }
     
     // MARK: UI
     var body: some Scene {
+        
         Settings {
             SettingsView()
         }
+        
         MenuBarExtra("Typist Ledger", systemImage: "keyboard.badge.ellipsis") {
             Button("Settings") {
                 NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
@@ -52,8 +58,6 @@ struct Typist_LedgerApp: App {
             }
         }
     }
-    
-    
     // MARK: Functions
     
     private func startLogging() {
@@ -80,4 +84,5 @@ struct Typist_LedgerApp: App {
         let response = picker.runModal()
         return response == .OK ? picker.url : nil
     }
+    
 }
