@@ -22,9 +22,13 @@ class FileService {
             // Create file if not alrady existing
             let fileCreated = FileManager.default.createFile(atPath: path, contents: nil)
             
-            print("File created? \(fileCreated)")
-            if !fileCreated { return false }
-        } else { print("File exists already") }
+            if !fileCreated {
+                return false
+            }
+        } else {
+            print("File exists already")
+            
+        }
         
         // Configure Service
         self.filePath = path
@@ -69,42 +73,9 @@ class FileService {
     ///   - keystrokeCount: Total keystrokes in tick interval
     /// - Returns: String formatted for log file
     private func entryString(tick: Double, keystrokeCount: Int) -> String {
-        return "\(tick),\(keystrokeCount)"
+        // Strip decimal from tick
+        let formattedTick = String(format: "%.0f", tick)
+        
+        return "\(formattedTick), \(keystrokeCount)"
     }
-    
-    //    private func
-    
-    // MARK: -
-    
-    ///  Appends new line to log file with time of last record and # keystrokes
-    /// - Parameters:
-    ///   - tick: seconds since 1970
-    ///   - strokes:  strokes in last minute
-    //    func appendTicks(tick : Double, strokes : Int ) {
-    //        if let handle = fileHandle {
-    //            do {
-    //                try handle.seekToEnd()
-    //
-    //            }
-    //            catch {
-    //                print(error)
-    //                return
-    //            }
-    //            let string = "\(tick),\(strokes)"
-    //            if let data = string.data(using: .utf8) {
-    //                do { try handle.write(contentsOf: data) } catch { print(error.localizedDescription) }
-    //            }
-    //        }
-    //    }
-    //
-    //
-    //    /// Close and release file
-    //    func close() {
-    //        if let fileHandle {
-    //            do { try fileHandle.close() } catch { print(error) }
-    //        }
-    //    }
-    //
-    
-    
 }

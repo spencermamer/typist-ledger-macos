@@ -18,7 +18,7 @@ class KeyMonitoringService {
         self.fileService = service
         print("Starting")
         
-        // Setup first 
+        // Setup first
         self.lastTickTime = floor(Date().timeIntervalSince1970)
         
         NSEvent.addGlobalMonitorForEvents(matching: .keyDown) { event in
@@ -36,6 +36,7 @@ class KeyMonitoringService {
                 // Reset Keystrokes
                 self.tickStrokes = 0;
             }
+            // If logging interval not exceed, increase tick count
             self.tickStrokes += 1
             print(self.tickStrokes)
         }
