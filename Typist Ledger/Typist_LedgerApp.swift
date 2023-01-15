@@ -54,10 +54,7 @@ struct Typist_LedgerApp: App {
     
     private func setupLogFile() {
         selectLogFolderIfNotDefined()
-//        let filepath = self.logFilePath + "minutelog.txt"
-        
-       
-        
+        let filepath = self.logFilePath + "minutelog.txt"
     }
     
     private func showSelectDirectoryPanel() -> URL? {
@@ -73,19 +70,12 @@ struct Typist_LedgerApp: App {
     
     var body: some Scene {
         
-      
-        
+    
         MenuBarExtra("Typist Ledger", systemImage: "keyboard.badge.ellipsis") {
-            Button("One") {
-            }
-            Button("Two") {
-            }
             Button("Settings") {
                 NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
                 NSApp.activate(ignoringOtherApps: true)
             }
-        
-            
             Divider()
             Button("Quit") {
                 NSApplication.shared.terminate(nil)
