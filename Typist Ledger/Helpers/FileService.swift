@@ -35,7 +35,8 @@ class FileService {
     
     func addEntry(tick: Double, keystrokesCount: Int) -> Bool {
         if !fileConfirmed { return false}
-        let entryString = entryString(tick: tick, keystrokeCount: keystrokesCount)
+        
+        let entryString = entryString(tick: tick, keystrokeCount: keystrokesCount) + "\n"
         
         do {
             // Create file handle
