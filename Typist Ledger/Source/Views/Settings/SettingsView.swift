@@ -12,10 +12,15 @@ struct SettingsView: View {
 //    private enum Tabs: Hashable {
 //        case general
 //    }
+    let fileService : FileService
+    
+    init(fileService: FileService) {
+        self.fileService = fileService
+    }
     
     var body: some View {
         TabView {
-            GeneralSettingsView().tabItem {
+            GeneralSettingsView(fileService: self.fileService).tabItem {
                 Label("General", systemImage: "gear")
             }
             PermissionsView().tabItem {
@@ -27,6 +32,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(fileService: FileService())
     }
 }

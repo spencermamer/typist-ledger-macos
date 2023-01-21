@@ -23,14 +23,15 @@ class FileService {
     func loadFile(pathURL : URL) -> Bool {
         let path = pathURL.relativePath
         print(path)
+        
         if !FileManager.default.fileExists(atPath: path) {
-            
             // Create file if not alrady existing
             let fileCreated = FileManager.default.createFile(atPath: path, contents: nil)
             
             if !fileCreated {
                 return false
             }
+            
         } else {
             print("File exists already")
         }

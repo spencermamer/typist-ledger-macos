@@ -16,6 +16,7 @@ struct Typist_LedgerApp: App {
     
     // MARK: Properties
     @AppStorage("logFilePath") var logFilePath: String = ""
+    @AppStorage("logPath") var logPath: String = ""
     
     // MARK: Init Services
     private var permissionsService = PermissionsService()
@@ -36,6 +37,7 @@ struct Typist_LedgerApp: App {
         
         // Check whether accessibility permissions are enabled
         self.permissionsService.pollAccessibilityPrivileges()
+        
         // 3. Start keystroke counting service
         startLogging()
     }
@@ -45,15 +47,19 @@ struct Typist_LedgerApp: App {
     var body: some Scene {
         
         Settings {
-            SettingsView()
+            SettingsView(fileService: self.fileService)
         }
         
         MenuBarExtra("Typist Ledger", systemImage: "keyboard.badge.ellipsis") {
+            
+            // Open Settings Window
             Button("Settings") {
                 NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
                 NSApp.activate(ignoringOtherApps: true)
             }
+            
             Divider()
+            // Quit Application Button
             Button("Quit") {
                 NSApplication.shared.terminate(nil)
             }
