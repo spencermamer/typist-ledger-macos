@@ -11,9 +11,15 @@ import AppKit
 class FileService {
     
     var  filePath : String = ""
+    
+    // `True` if provided file path has been confirmed to point to a existing or newly-created file.
     private var fileConfirmed: Bool = false
     private var fileHandle : FileHandle?
     
+    
+    /// Configures the `FileService` with a URL pointing to a file location
+    /// - Parameter pathURL: File URL
+    /// - Returns: True if Service is able to find or create a file at this location.
     func loadFile(pathURL : URL) -> Bool {
         let path = pathURL.relativePath
         print(path)
@@ -36,6 +42,12 @@ class FileService {
         return true
     }
     
+    
+    /// Take clock `tick` and total keystrokes in interval and add line to log file
+    /// - Parameters:
+    ///   - tick: Epoch time for end of keystroke count interval
+    ///   - keystrokesCount: total keystrokes detected in interval
+    /// - Returns: True if able to write entry to log file
     func addEntry(tick: Double, keystrokesCount: Int) -> Bool {
         if !fileConfirmed { return false}
         let entryString = entryString(tick: tick, keystrokeCount: keystrokesCount) + "\n"

@@ -162,6 +162,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		70BD6AA9297B59CA009A8657 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -319,7 +320,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Typist Ledger/Preview Content\"";
 				DEVELOPMENT_TEAM = ZMG678R74G;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -353,7 +354,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Typist Ledger/Preview Content\"";
 				DEVELOPMENT_TEAM = ZMG678R74G;
 				ENABLE_HARDENED_RUNTIME = YES;
