@@ -22,7 +22,7 @@ struct Typist_LedgerApp: App {
     private let keymonitoringService = KeyMonitoringService()
     private let fileService = FileService()
     
-// MARK: -
+// MARK:
     
     init() {
         // 1. Check if log file path is set. If not, prompt user to select folder
@@ -45,7 +45,7 @@ struct Typist_LedgerApp: App {
     var body: some Scene {
         
         Settings {
-            PermissionsView()
+            SettingsView()
         }
         
         MenuBarExtra("Typist Ledger", systemImage: "keyboard.badge.ellipsis") {
@@ -77,6 +77,7 @@ struct Typist_LedgerApp: App {
         }
         return self.logFilePath
     }
+    
     
     private func showSelectDirectoryPanel() -> URL? {
         let picker = NSOpenPanel()

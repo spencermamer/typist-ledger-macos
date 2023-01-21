@@ -12,6 +12,7 @@
 		70113CD7297357C100360D01 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70113CD6297357C100360D01 /* SettingsView.swift */; };
 		7017C4DE29737BCA00E804C5 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7017C4DD29737BCA00E804C5 /* FileService.swift */; };
 		7017C4E029737C8F00E804C5 /* KeyMonitoringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7017C4DF29737C8F00E804C5 /* KeyMonitoringService.swift */; };
+		703DCA9D297C8E11000FCCE0 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703DCA9C297C8E11000FCCE0 /* GeneralSettingsView.swift */; };
 		704E5F99297335E0003245F9 /* Typist_LedgerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704E5F98297335E0003245F9 /* Typist_LedgerApp.swift */; };
 		704E5F9D297335E1003245F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 704E5F9C297335E1003245F9 /* Assets.xcassets */; };
 		704E5FA0297335E1003245F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 704E5F9F297335E1003245F9 /* Preview Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		70113CD82973581700360D01 /* Typist-Ledger-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Typist-Ledger-Info.plist"; sourceTree = SOURCE_ROOT; };
 		7017C4DD29737BCA00E804C5 /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
 		7017C4DF29737C8F00E804C5 /* KeyMonitoringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMonitoringService.swift; sourceTree = "<group>"; };
+		703DCA9C297C8E11000FCCE0 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		704E5F95297335E0003245F9 /* Typist Ledger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Typist Ledger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		704E5F98297335E0003245F9 /* Typist_LedgerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typist_LedgerApp.swift; sourceTree = "<group>"; };
 		704E5F9C297335E1003245F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				70113CD6297357C100360D01 /* SettingsView.swift */,
+				703DCA9C297C8E11000FCCE0 /* GeneralSettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				70113CD7297357C100360D01 /* SettingsView.swift in Sources */,
 				700DE93E2974AF0000A3D4E9 /* PermissionsView.swift in Sources */,
 				7017C4E029737C8F00E804C5 /* KeyMonitoringService.swift in Sources */,
+				703DCA9D297C8E11000FCCE0 /* GeneralSettingsView.swift in Sources */,
 				7017C4DE29737BCA00E804C5 /* FileService.swift in Sources */,
 				704E5F99297335E0003245F9 /* Typist_LedgerApp.swift in Sources */,
 				700DE93C2974ADA500A3D4E9 /* PermissionsService.swift in Sources */,
@@ -352,7 +356,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 92;
+				CURRENT_PROJECT_VERSION = 198;
 				DEVELOPMENT_ASSET_PATHS = "\"Typist Ledger/Preview Content\"";
 				DEVELOPMENT_TEAM = ZMG678R74G;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -386,7 +390,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 92;
+				CURRENT_PROJECT_VERSION = 198;
 				DEVELOPMENT_ASSET_PATHS = "\"Typist Ledger/Preview Content\"";
 				DEVELOPMENT_TEAM = ZMG678R74G;
 				ENABLE_HARDENED_RUNTIME = YES;

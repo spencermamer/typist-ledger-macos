@@ -9,17 +9,20 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    private enum Tabs: Hashable {
-        case general
-    }
+//    private enum Tabs: Hashable {
+//        case general
+//    }
     
     var body: some View {
-        
-        Label("General", systemImage: "gear")
-            .padding(20)
-            .frame(width: 350, height: 100)
+        TabView {
+            GeneralSettingsView().tabItem {
+                Label("General", systemImage: "gear")
+            }
+            PermissionsView().tabItem {
+                Label("Permissions", systemImage: "gear")
+            }
+        }.frame(minWidth: 450, minHeight: 400)
     }
-    
 }
 
 struct SettingsView_Previews: PreviewProvider {
