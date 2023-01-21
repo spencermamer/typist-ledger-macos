@@ -53,6 +53,24 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		703DCA9A297C89FD000FCCE0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		703DCA9B297C8A0E000FCCE0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				704E5F98297335E0003245F9 /* Typist_LedgerApp.swift */,
+				703DCA9A297C89FD000FCCE0 /* Resources */,
+				70A52490297C893A00D8B8FB /* Views */,
+				7017C4DC29737BB600E804C5 /* Helpers */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		704E5F8C297335E0003245F9 = {
 			isa = PBXGroup;
 			children = (
@@ -73,14 +91,11 @@
 		704E5F97297335E0003245F9 /* Typist Ledger */ = {
 			isa = PBXGroup;
 			children = (
-				7017C4DC29737BB600E804C5 /* Helpers */,
+				703DCA9B297C8A0E000FCCE0 /* Source */,
 				70113CD82973581700360D01 /* Typist-Ledger-Info.plist */,
-				704E5F98297335E0003245F9 /* Typist_LedgerApp.swift */,
-				700DE93D2974AF0000A3D4E9 /* PermissionsView.swift */,
 				704E5F9C297335E1003245F9 /* Assets.xcassets */,
 				704E5FA1297335E1003245F9 /* Typist_Ledger.entitlements */,
 				704E5F9E297335E1003245F9 /* Preview Content */,
-				70113CD6297357C100360D01 /* SettingsView.swift */,
 			);
 			path = "Typist Ledger";
 			sourceTree = "<group>";
@@ -91,6 +106,23 @@
 				704E5F9F297335E1003245F9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		70A52490297C893A00D8B8FB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				700DE93D2974AF0000A3D4E9 /* PermissionsView.swift */,
+				70A52491297C895A00D8B8FB /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		70A52491297C895A00D8B8FB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				70113CD6297357C100360D01 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,7 +352,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 92;
 				DEVELOPMENT_ASSET_PATHS = "\"Typist Ledger/Preview Content\"";
 				DEVELOPMENT_TEAM = ZMG678R74G;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -354,7 +386,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 92;
 				DEVELOPMENT_ASSET_PATHS = "\"Typist Ledger/Preview Content\"";
 				DEVELOPMENT_TEAM = ZMG678R74G;
 				ENABLE_HARDENED_RUNTIME = YES;

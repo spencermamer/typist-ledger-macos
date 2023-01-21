@@ -7,7 +7,6 @@
 
 import SwiftUI
 import AppKit.NSAccessibility
-//import Combine
 
 @main
 struct Typist_LedgerApp: App {
@@ -18,11 +17,12 @@ struct Typist_LedgerApp: App {
     // MARK: Properties
     @AppStorage("logFilePath") var logFilePath: String = ""
     
-    // Init Services
+    // MARK: Init Services
     private var permissionsService = PermissionsService()
     private let keymonitoringService = KeyMonitoringService()
     private let fileService = FileService()
     
+// MARK: -
     
     init() {
         // 1. Check if log file path is set. If not, prompt user to select folder
@@ -41,6 +41,7 @@ struct Typist_LedgerApp: App {
     }
     
     // MARK: UI
+    
     var body: some Scene {
         
         Settings {
@@ -58,6 +59,7 @@ struct Typist_LedgerApp: App {
             }
         }
     }
+    
     // MARK: Functions
     
     private func startLogging() {
